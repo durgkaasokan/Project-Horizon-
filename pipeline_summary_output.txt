@@ -1,0 +1,7 @@
+=== PROJECT HORIZON ADVISORY DATA PIPELINE OUTPUT ===
+Total Fleet Operational Rows Processed: 146,000
+Baseline Fleet Diesel Footprint:        8,761,613.31 Liters
+Displaced Ramp Diesel (Trolley):        3,795,574.13 Liters
+New Mine Grid Energy Demand:            12,651,917.63 kWh
+Total Carbon Abated:                    10,172.14 Tonnes CO2
+Avoided Carbon Regulatory Penalties:    $1,017,213.87 USD
