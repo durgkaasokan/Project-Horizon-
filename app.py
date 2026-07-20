@@ -1,6 +1,20 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+
+# Determine base path relative to app.py location
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, "mine_fleet_telemetry.csv")
+
+# Self-healing fallback: If telemetry doesn't exist, run the simulator script live
+if not os.path.exists(csv_path):
+    st.info("⚙️ Telemetry data not found. Running haul cycle simulator...")
+    import haul_cycle_simulator
+    if hasattr(haul_cycle_simulator, 'main'):
+        haul_cycle_simulator.main()
+
+df = pd.read_csv(csv_path)
 
 # Set page layout to wide and title the dashboard professionally
 st.set_page_config(page_title="Project Horizon | Fleet Electrification Dashboard", layout="wide")
